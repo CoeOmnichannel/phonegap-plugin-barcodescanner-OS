@@ -46,7 +46,7 @@ public class CaptureActivity extends Activity implements
             boolean scanButtonVisible = getIntent().getBooleanExtra("SCAN_BUTTON", true);
             String scanButtonText = getIntent().getStringExtra("SCAN_TEXT");
 
-            setContentView(getResourceId("layout/activity_custom_scanner"));
+            setContentView(getResourceId("layout/activity_custom_scanner_galp"));
             barcodeScannerView = findViewById(getResourceId("id/zxing_barcode_scanner"));
             barcodeScannerView.setTorchListener(this);
             switchFlashlightButton = findViewById(getResourceId("id/switch_flashlight"));
@@ -73,7 +73,7 @@ public class CaptureActivity extends Activity implements
             capture.initializeFromIntent(getIntent(), savedInstanceState);
             capture.setShowMissingCameraPermissionDialog(false);
 
-            Button scanBtn = findViewById(getResourceId("id/scan_button"));
+            Button scanBtn = findViewById(getResourceId("id/scan_button_custom"));
 
             if (!scanButtonVisible) {
                 scanBtn.setVisibility(View.GONE);

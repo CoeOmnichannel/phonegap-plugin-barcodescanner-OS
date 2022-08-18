@@ -37,14 +37,14 @@
     
     <source-file src="src/android/com/phonegap/plugins/barcodescanner/BarcodeScanner.java" target-dir="src/com/phonegap/plugins/barcodescanner"/>
     <source-file src="src/android/com/phonegap/plugins/barcodescanner/CaptureActivity.java" target-dir="src/com/phonegap/plugins/barcodescanner"/>
-    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/drawable/ic_close.xml" target-dir="res/drawable"/>
-    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/drawable/ic_flash.xml" target-dir="res/drawable"/>
-    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/drawable/ic_scan.xml" target-dir="res/drawable"/>
-    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/drawable/scan_button.xml" target-dir="res/drawable"/>
-    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/layout/activity_custom_scanner.xml" target-dir="res/layout"/>
-    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/layout/custom_barcode_scanner.xml" target-dir="res/layout"/>
-    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/layout-land/activity_custom_scanner.xml" target-dir="res/layout-land"/>
-    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/layout-land/custom_barcode_scanner.xml" target-dir="res/layout-land"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/drawable/ic_close_custom.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/drawable/ic_flash_custom.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/drawable/ic_scan_custom.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/drawable/scan_button_custom.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/layout/activity_custom_scanner_galp.xml" target-dir="res/layout"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/layout/custom_barcode_scanner_galp.xml" target-dir="res/layout"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/layout-land/activity_custom_scanner_galp.xml" target-dir="res/layout-land"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/layout-land/custom_barcode_scanner_galp.xml" target-dir="res/layout-land"/>
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="BarcodeScanner">
         <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner"/>

@@ -10,7 +10,7 @@
         android:id="@+id/zxing_barcode_scanner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:zxing_scanner_layout="@layout/custom_barcode_scanner">
+        app:zxing_scanner_layout="@layout/custom_barcode_scanner_galp">
     </com.journeyapps.barcodescanner.DecoratedBarcodeView>
 
     <ImageButton
@@ -20,7 +20,7 @@
         android:layout_alignRight="@id/zxing_barcode_scanner"
         android:layout_alignParentTop="true"
         android:layout_marginRight="10dp"
-        android:src="@drawable/ic_flash"
+        android:src="@drawable/ic_flash_custom"
         android:padding="20dp"
         android:background="@android:color/transparent"
         android:onClick="switchFlashlight" />
@@ -35,21 +35,21 @@
         android:background="@android:color/transparent"
         android:onClick="closeScreen"
         android:padding="20dp"
-        android:src="@drawable/ic_close" />
+        android:src="@drawable/ic_close_custom" />
 
     <Button
-        android:id="@+id/scan_button"
+        android:id="@+id/scan_button_custom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/zxing_barcode_scanner"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
-        android:drawableLeft="@drawable/ic_scan"
+        android:drawableLeft="@drawable/ic_scan_custom"
         android:padding="15dp"
         android:drawablePadding="3dp"
         android:text="Scan"
-        android:background="@drawable/scan_button"
+        android:background="@drawable/scan_button_custom"
         android:onClick="scan" />
 
 </RelativeLayout>
