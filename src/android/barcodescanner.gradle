@@ -1,13 +1,12 @@
 repositories{
     jcenter()
     flatDir{
-        dirs 'libs'
+        dirs 'src/main/libs'
     }
 }
 
 dependencies {
-  implementation (name:'zxing-android-embedded-4.2.0-OS', ext:'aar')
-  implementation 'com.google.zxing:core:3.3.0'
+  implementation   'com.journeyapps:zxing-android-embedded:4.3.0'
 }
 
 android {
