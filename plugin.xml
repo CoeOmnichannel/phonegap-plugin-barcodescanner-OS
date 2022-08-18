@@ -61,7 +61,7 @@
     </config-file>
     <framework src="src/android/barcodescanner.gradle" custom="true" type="gradleReference"/>
     <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION"/>
-    <!--resource-file src="src/android/zxing-android-embedded-4.2.0-OS.aar" target="libs/zxing-android-embedded-4.2.0-OS.aar" /-->
+    <resource-file src="src/android/zxing-android-embedded-4.2.0-OS.aar" target="libs/zxing-android-embedded-4.2.0-OS.aar"/>
     <preference name="ANDROID_SUPPORT_V4_VERSION" default="27.+"/>
   </platform>
   <platform name="windows">
