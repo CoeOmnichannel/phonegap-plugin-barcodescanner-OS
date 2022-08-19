@@ -1,5 +1,8 @@
 package com.phonegap.plugins.barcodescanner;
 
+import static com.phonegap.plugins.barcodescanner.BarcodeScanner.DISABLE_BEEP;
+import static com.phonegap.plugins.barcodescanner.BarcodeScanner.SHOW_TORCH_BUTTON;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -41,9 +44,9 @@ public class CaptureActivity extends Activity implements
             super.onCreate(savedInstanceState);
 
             String scanInstructions = getIntent().getStringExtra("SCAN_INSTRUCTIONS");
-            int scanOrientation = getIntent().getIntExtra("SCAN_ORIENTATION", 0);
+            int scanOrientation = getIntent().getIntExtra("RESULTDISPLAY_DURATION", 0);
             boolean scanLine = getIntent().getBooleanExtra("SCAN_LINE", true);
-            boolean scanButtonVisible = getIntent().getBooleanExtra("SCAN_BUTTON", true);
+            boolean scanButtonVisible = getIntent().getBooleanExtra("SCAN_BUTTON", false);
             String scanButtonText = getIntent().getStringExtra("SCAN_TEXT");
 
             setContentView(getResourceId("layout/activity_custom_scanner_galp"));
@@ -70,6 +73,21 @@ public class CaptureActivity extends Activity implements
 
             capture = new CaptureManager(this, barcodeScannerView);
             getIntent().putExtra(Intents.Scan.SCAN_TYPE, Intents.Scan.MIXED_SCAN);
+
+            //some options
+            if(getIntent().getBooleanExtra(SHOW_TORCH_BUTTON, false) && hasFlash()) {
+                switchFlashlightButton.setVisibility(View.VISIBLE);
+            }
+
+            if(getIntent().getBooleanExtra(DISABLE_BEEP, false)) {
+                getIntent().putExtra(Intents.Scan.BEEP_ENABLED, false);
+            }
+
+            long timeout = getIntent().getIntExtra("RESULT_DISPLAY_DURATION_MS", 0);
+            if( timeout > 0) {
+                getIntent().putExtra(Intents.Scan.TIMEOUT, timeout);
+            }
+
             capture.initializeFromIntent(getIntent(), savedInstanceState);
             capture.setShowMissingCameraPermissionDialog(false);
 
@@ -77,12 +95,10 @@ public class CaptureActivity extends Activity implements
 
             if (!scanButtonVisible) {
                 scanBtn.setVisibility(View.GONE);
-
                 capture.decode();
             } else {
                 scanBtn.setText(scanButtonText);
             }
-
 
             changeMaskColor(null);
             changeLaserVisibility(scanLine);
