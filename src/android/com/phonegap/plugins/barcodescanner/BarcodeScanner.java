@@ -177,8 +177,12 @@ public class BarcodeScanner extends CordovaPlugin {
                         intentScan.putExtra(Intents.Scan.TORCH_ENABLED, obj.optBoolean(TORCH_ON, false));
                         boolean beep = obj.optBoolean(DISABLE_BEEP, false);
                         intentScan.putExtra(DISABLE_BEEP, !beep);
+
                         if (obj.has(RESULTDISPLAY_DURATION)) {
-                            intentScan.putExtra(Intents.Scan.TIMEOUT, "" + obj.optLong(RESULTDISPLAY_DURATION));
+                            long duration = obj.optLong(RESULTDISPLAY_DURATION);
+                            if(duration > 0 ) {
+                                intentScan.putExtra(Intents.Scan.TIMEOUT, obj.optLong(RESULTDISPLAY_DURATION));
+                            }
                         }
                         if (obj.has(FORMATS)) {
                             intentScan.putExtra(Intents.Scan.FORMATS, obj.optString(FORMATS));
