@@ -44,7 +44,7 @@ public class CaptureActivity extends Activity implements
             super.onCreate(savedInstanceState);
 
             String scanInstructions = getIntent().getStringExtra("SCAN_INSTRUCTIONS");
-            int scanOrientation = getIntent().getIntExtra("RESULTDISPLAY_DURATION", 0);
+            int scanOrientation = getIntent().getIntExtra("SCAN_ORIENTATION", 0);
             boolean scanLine = getIntent().getBooleanExtra("SCAN_LINE", true);
             boolean scanButtonVisible = getIntent().getBooleanExtra("SCAN_BUTTON", false);
             String scanButtonText = getIntent().getStringExtra("SCAN_TEXT");
@@ -81,11 +81,6 @@ public class CaptureActivity extends Activity implements
 
             if(getIntent().getBooleanExtra(DISABLE_BEEP, false)) {
                 getIntent().putExtra(Intents.Scan.BEEP_ENABLED, false);
-            }
-
-            long timeout = getIntent().getIntExtra("RESULT_DISPLAY_DURATION_MS", 0);
-            if( timeout > 0) {
-                getIntent().putExtra(Intents.Scan.TIMEOUT, timeout);
             }
 
             capture.initializeFromIntent(getIntent(), savedInstanceState);
