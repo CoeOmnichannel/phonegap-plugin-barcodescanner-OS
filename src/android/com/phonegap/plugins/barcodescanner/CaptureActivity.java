@@ -85,6 +85,10 @@ public class CaptureActivity extends Activity implements
                 getIntent().putExtra(Intents.Scan.BEEP_ENABLED, false);
             }
 
+            if(savedInstanceState != null){
+                savedInstanceState.putInt("SAVED_ORIENTATION_LOCK", 0);
+            }
+
             capture.initializeFromIntent(getIntent(), savedInstanceState);
             capture.setShowMissingCameraPermissionDialog(false);
 
