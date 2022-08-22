@@ -59,6 +59,8 @@ public class CaptureActivity extends Activity implements
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
             } else if (scanOrientation == PORTRAIT) {
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+            } else {
+                getIntent().putExtra(Intents.Scan.ORIENTATION_LOCKED, false);
             }
 
             // Load and use views afterwards
