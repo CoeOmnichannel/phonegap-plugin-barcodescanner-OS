@@ -6,7 +6,8 @@ repositories{
 }
 
 dependencies {
-    api(name:'barcodescanner-release-2.1.5', ext:'aar')
+    //api(name:'barcodescanner-release-2.1.5', ext:'aar')
+    implementation(name:'barcodescanner-release-2.1.5', ext:'aar')
     implementation 'androidx.core:core:1.12.0'
 }
 
