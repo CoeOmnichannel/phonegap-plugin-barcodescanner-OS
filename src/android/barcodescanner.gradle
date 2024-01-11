@@ -16,3 +16,10 @@ android {
         exclude 'META-INF/LICENSE'
     }
 }
+
+// Adiciona um script para verificar se o AndroidX está habilitado
+project.afterEvaluate {
+    if (!project.hasProperty('android.useAndroidX') || project.property('android.useAndroidX') != 'true') {
+        throw new GradleException('Este plugin requer que android.useAndroidX seja definido como true no arquivo gradle.properties do projeto.')
+    }
+}
