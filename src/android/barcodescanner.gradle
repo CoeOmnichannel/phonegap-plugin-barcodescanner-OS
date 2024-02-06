@@ -1,12 +1,13 @@
 repositories{
     jcenter()
     flatDir{
-        dirs 'libs'
+        dirs 'src/main/libs'
     }
 }
 
 dependencies {
-    api(name:'barcodescanner-release-2.1.5', ext:'aar')
+  implementation (name:'zxing-android-embedded-4.2.0-OS', ext:'aar')
+  implementation 'com.google.zxing:core:3.3.0'
 }
 
 android {

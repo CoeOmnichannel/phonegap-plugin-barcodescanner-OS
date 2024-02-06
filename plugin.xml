@@ -26,7 +26,25 @@
     <framework src="AudioToolbox.framework" />
   </platform>
   <platform name="android">
+      <config-file target="AndroidManifest.xml" parent="application">        
+      <activity android:name="com.phonegap.plugins.barcodescanner.CaptureActivity"
+              android:screenOrientation="fullSensor"
+              android:stateNotNeeded="true"
+              android:exported="false"
+              android:theme="@style/zxing_CaptureTheme"
+              android:windowSoftInputMode="stateAlwaysHidden"></activity>    
+    </config-file>
+    
     <source-file src="src/android/com/phonegap/plugins/barcodescanner/BarcodeScanner.java" target-dir="src/com/phonegap/plugins/barcodescanner"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/CaptureActivity.java" target-dir="src/com/phonegap/plugins/barcodescanner"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/drawable/ic_close_custom.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/drawable/ic_flash_custom.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/drawable/ic_scan_custom.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/drawable/scan_button_custom.xml" target-dir="res/drawable"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/layout/activity_custom_scanner_galp.xml" target-dir="res/layout"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/layout/custom_barcode_scanner_galp.xml" target-dir="res/layout"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/layout-land/activity_custom_scanner_galp.xml" target-dir="res/layout-land"/>
+    <source-file src="src/android/com/phonegap/plugins/barcodescanner/res/layout-land/custom_barcode_scanner_galp.xml" target-dir="res/layout-land"/>
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="BarcodeScanner">
         <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner"/>
@@ -43,7 +61,7 @@
     </config-file>
     <framework src="src/android/barcodescanner.gradle" custom="true" type="gradleReference"/>
     <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION"/>
-    <lib-file src="src/android/barcodescanner-release-2.1.5.aar"/>
+    <resource-file src="src/android/zxing-android-embedded-4.2.0-OS.aar" target="libs/zxing-android-embedded-4.2.0-OS.aar"/>
     <preference name="ANDROID_SUPPORT_V4_VERSION" default="27.+"/>
   </platform>
   <platform name="windows">
